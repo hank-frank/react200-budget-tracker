@@ -1,4 +1,3 @@
-//Action Creators
 export function updateExpenseDescription(description) {
     return {
         type: 'UPDATE_EXPENSE_DESCRIPTION',

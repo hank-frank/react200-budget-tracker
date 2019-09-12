@@ -8,13 +8,9 @@ export default function IncomeReducer (state = defaultState, action) {
     const { type, payload } = action;
 
     switch (type) {
-        //case of update description
         case 'UPDATE_INCOME_DESCRIPTION': {
-            //return an object
             return {
-                //with all previous state
                 ...state,
-                //overwriting description
                 description: payload.description
             };
         }
@@ -32,9 +28,7 @@ export default function IncomeReducer (state = defaultState, action) {
                 description: '',
                 action: '', 
                 lineItems: [
-                    //all the previous line items
                     ...state.lineItems,
-                    //plus a new object
                     { description, amount }
                 ]
             };

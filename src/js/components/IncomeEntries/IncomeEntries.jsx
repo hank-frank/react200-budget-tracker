@@ -9,17 +9,13 @@ import {
 export default class IncomeEntries extends React.Component {
     constructor(props) {
         super(props)
-    // Here we're binding these methods to the context
-    // of the components. This only has to be done,
-    // because these methods are called back by
-    // event emitters (which lose context).
+
     this.handleDescriptionInput = this.handleDescriptionInput.bind(this);
     this.handleAmountInput = this.handleAmountInput.bind(this);
     this.handleAddIncome = this.handleAddIncome.bind(this);
   }
 
   handleDescriptionInput(event) {
-    // dispatch was provided by connect()
     const { dispatch } = this.props;
     const { value } = event.target;
     dispatch(updateIncomeDescription(value));
@@ -36,9 +32,7 @@ export default class IncomeEntries extends React.Component {
     dispatch(addIncome(description, amount));
   }
 
-
 render() {
-    // These values were provided by connect()
     const { description, amount, lineItems } = this.props;
     return (
       <div className='card border-success mb-3'>
@@ -97,5 +91,4 @@ render() {
       </div>
     );
   };
-
 }

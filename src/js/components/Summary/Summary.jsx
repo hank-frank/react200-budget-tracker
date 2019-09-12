@@ -16,11 +16,9 @@ function formatCurrency(amount) {
       return `-$${(dollars * -1).toLocaleString()}.${cents}`;
 }
 
-
 class Summary extends React.Component {
     render() {
         const { incomeItems, expenseItems } = this.props;
-
         const incomeTotal = calculateSum(incomeItems) / 100;
         const expenseTotal = calculateSum(expenseItems) / 100;
         const difference = Math.round(incomeTotal - expenseTotal) / 100;
